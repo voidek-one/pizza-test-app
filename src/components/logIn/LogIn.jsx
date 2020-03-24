@@ -1,12 +1,11 @@
 import React from "react";
-import { Form, Input, Button, Alert } from "antd";
+import { Form, Input, Button } from "antd";
 import "./LogIn.css";
-import { getTokenData, isAuth } from "../../utils/auth/auth";
+import { getTokenData } from "../../utils/auth/auth";
 import { Link } from "react-router-dom";
 
 export default class LogIn extends React.Component {
   state = { error: "" };
-  // loginFailed = newError;
   onSubmit = async ({ email, password }) => {
     try {
       await getTokenData(email, password);
@@ -17,7 +16,6 @@ export default class LogIn extends React.Component {
     }
   };
 
-  // loginFailed = isAuth();
   layout = {
     labelCol: { span: 4 },
     wrapperCol: { span: 16 }

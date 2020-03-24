@@ -1,23 +1,13 @@
 import React, { Component } from "react";
-import { PageHeader, Button, Layout, Menu } from "antd";
+import { Layout, Menu } from "antd";
 import "./Header.css";
 
 const { Header: AntdHeader, Content, Footer } = Layout;
-
-// const routes = { [key]: { key, path } };
 
 export default class Header extends Component {
   currentPath = "";
   constructor(props) {
     super(props);
-    // const activeRoute = Object.entries(routes).find(([key, value]) => {
-    //   const windowPath = `${window.location.pathname}${window.location.hash}`;
-    //   return value.path === windowPath;
-    // });
-    // if (activeRoute) {
-    //   const [key] = activeRoute;
-    //   this.currentPath = key;
-    // }
   }
   render() {
     return (
@@ -38,9 +28,6 @@ export default class Header extends Component {
               className="testmenu"
               theme="light"
               mode="horizontal"
-              // defaultSelectedKeys={[
-              //   this.currentPath ? routes[this.currentPath].key.toString() : "0"
-              // ]}
               style={{ lineHeight: "64px" }}
             >
               <Menu.Item key="1">

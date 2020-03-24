@@ -6,10 +6,8 @@ import Catalog from "./components/productСatalog/ProductCatalog";
 import LogIn from "./components/logIn/LogIn";
 import RegistrationForm from "./components/registration/Registration";
 import List from "./components/shoppingBasket/ShoppingBasket";
-import Home from "./newProject/components/home/Home";
-import Order from "./newProject/components/order/Order";
-import CatalogOfGoods from "./newProject/components/catalog/Catalog";
-import PageLayout from "./newProject/components/layout/Layout";
+import Home from "./components/home/Home";
+import PageLayout from "./components/layout/Layout";
 import { isAuth } from "./utils/auth/auth";
 
 function App() {
@@ -27,9 +25,6 @@ function App() {
             <PrivateRoute path="/basket">
               <List />
             </PrivateRoute>
-            <Route path="/home" component={Home} />
-            <Route path="/catalogofgoods" component={CatalogOfGoods} />
-            <Route path="/order" component={Order} />
           </BrowserRouter>
         </PageLayout>
       </div>
