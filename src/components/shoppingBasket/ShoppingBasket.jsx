@@ -159,7 +159,7 @@ const ShoppingBasket = props => {
         </div>
         {!greeting && (
           <div>
-            <p className="ErrorTextAauthorization">
+            <p className="errorTextAauthorization">
               Вы не авторизованы, пожалуйста нажните на кнопку "авторизация"
             </p>
             <Link to="/login">

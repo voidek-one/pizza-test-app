@@ -16,10 +16,7 @@
   margin-right: 20px;
   padding-bottom: 50px;
 }
-.inputCascaderDiv {
-  width: 450px;
-}
-.ErrorTextAauthorization {
+.errorTextAauthorization {
   font-size: 30px;
   color: red;
 }

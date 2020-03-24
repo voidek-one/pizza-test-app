@@ -9,7 +9,7 @@ class PageLayout extends Component {
     return (
       <Layout className="layout">
         <Header></Header>
-        <div className="loyout__content">{this.props.children}</div>
+        <div className="layoutContent">{this.props.children}</div>
         <Footer></Footer>
       </Layout>
     );

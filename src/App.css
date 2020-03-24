@@ -1,17 +1,5 @@
 @import "~antd/dist/antd.css";
-.dataObj {
-  display: flex;
-}
-/* .app {
-  text-align: center;
-  display: flex;
-} */
+
 .appContent {
-  /* padding-top: 40px; */
   margin: 0 auto;
-  /* display: flex; */
-}
-.appMainText {
-  text-align: center;
-  font-size: 40px;
 }

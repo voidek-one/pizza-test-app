@@ -21,7 +21,7 @@ const zoomOutProperties = {
 export default function Home() {
   return (
     <div>
-      <div className="slide-container">
+      <div className="sliderContainer">
         <Zoom {...zoomOutProperties}>
           {images.map((each, index) => (
             <img key={index} style={{ width: "100%" }} src={each} />

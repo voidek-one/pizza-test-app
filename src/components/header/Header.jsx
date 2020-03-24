@@ -16,7 +16,7 @@ export default class Header extends Component {
           padding: 24
         }}
       >
-        <div className="headertest">
+        <div>
           <AntdHeader className="header">
             <div>
               <img
@@ -25,7 +25,7 @@ export default class Header extends Component {
               />
             </div>
             <Menu
-              className="testmenu"
+              className="menuHeader"
               theme="light"
               mode="horizontal"
               style={{ lineHeight: "64px" }}
