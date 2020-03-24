@@ -1,0 +1,15 @@
+.logo {
+  width: 150px;
+
+  margin: 16px 24px 16px 0;
+  float: left;
+  border-radius: 30px;
+}
+.layout .header {
+  background: none;
+}
+.testmenu {
+  background: none;
+  text-align: end;
+  padding-top: 50px;
+}

@@ -1,0 +1,26 @@
+.pizzaItemCart {
+  border: blanchedalmond 1px solid;
+  border-radius: 90px;
+  box-shadow: -18px 0 20px -20px #333, 18px 0 20px -20px #333;
+  margin: 30px;
+  background-color: white;
+}
+.pizzaItemName {
+  padding-top: 20px;
+}
+.pizzaItemImg img {
+  padding: 10px;
+  max-width: 80%;
+}
+.pizzaItemAmount {
+  padding-bottom: 15px;
+}
+.pizzaItemSelect {
+  padding-bottom: 15px;
+}
+.pizzaItemPrice {
+  font-size: 30px;
+}
+.pizzaItemBtn {
+  padding-bottom: 20px;
+}

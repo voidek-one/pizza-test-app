@@ -1,0 +1,10 @@
+.productPizza {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.iconBasket {
+  max-width: 75px;
+  float: right;
+  margin-right: 20px;
+}

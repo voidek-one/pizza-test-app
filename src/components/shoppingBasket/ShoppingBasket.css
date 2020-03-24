@@ -1,0 +1,25 @@
+.tableBasket {
+  max-width: 60%;
+  margin: 0 auto;
+}
+.tableBasketText {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(216, 120, 41);
+}
+.bntCroup {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.bntOrder {
+  margin-right: 20px;
+  padding-bottom: 50px;
+}
+.inputCascaderDiv {
+  width: 450px;
+}
+.ErrorTextAauthorization {
+  font-size: 30px;
+  color: red;
+}

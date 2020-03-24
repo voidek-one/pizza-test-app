@@ -1,0 +1,16 @@
+.loginForm {
+  margin: 0 auto;
+  max-width: 50%;
+}
+.btnAndTextGroup {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.btnAndTextGroup div {
+  margin-right: 20px;
+}
+.loginErrorText {
+  text-align: center;
+  color: red;
+}
