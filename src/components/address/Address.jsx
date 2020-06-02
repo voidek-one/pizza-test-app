@@ -8,7 +8,7 @@ const { Option } = AutoComplete;
 export default function Address() {
   const [result, setResult] = useState([]);
 
-  const handleSearch = debounce(async value => {
+  const handleSearch = debounce(async (value) => {
     if (value) {
       const resp = await search(value);
       const res = await resp.json();
@@ -21,8 +21,7 @@ export default function Address() {
       setResult([]);
     }
   }, 2100);
-  console.log(result);
-  const children = result.map(location => (
+  const children = result.map((location) => (
     <Option key={location.place_id} value={location.display_name}>
       {location.display_name}
     </Option>
@@ -34,13 +33,13 @@ export default function Address() {
       rules={[
         {
           required: true,
-          message: "Пожалуйска укажите адрес!"
-        }
+          message: "Пожалуйска укажите адрес!",
+        },
       ]}
     >
       <AutoComplete
         style={{
-          width: 600
+          width: 250,
         }}
         onSearch={handleSearch}
         placeholder="Ваш адрес"

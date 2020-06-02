@@ -2,3 +2,21 @@
   margin: 0 auto;
   max-width: 50%;
 }
+@media screen and (max-width: 1600px) {
+  .registrationForm {
+    max-width: 75%;
+  }
+  }
+  @media screen and (max-width: 1100px) {
+    .registrationForm {
+      max-width: 90%;
+    }
+    }
+    @media screen and (max-width: 991px) {
+      .ant-form-item-label {
+        text-align: left;
+      }
+      }
+
+
+    

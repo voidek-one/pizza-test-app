@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Аррива!",
+    "id": 1,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/e6a8b0a6818e46968acd075f521e4053_233x233.jpeg",
+    "description": "Соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок"
+  },
+  {
+    "name": "Пепперони Фреш с томатами",
+    "id": 2,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/f57b939a4455453daade38016f61d766_233x233.jpeg",
+    "description": "Пикантная пепперони, томатный соус, моцарелла, томаты"
+  },
+  {
+    "name": "Испанские колбаски чоризо",
+    "id": 3,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/750065aab4ea45268fac2f17d4c56183_233x233.jpeg",
+    "description": "Острая чоризо, моцарелла, томаты, соус чипотле"
+  },
+  {
+    "name": "Мексиканская",
+    "id": 4,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/eeb21a31-3da8-494a-8046-b5bfb6d83599.jpg",
+    "description": "Цыпленок, томатный соус, сладкий перец, красный лук, моцарелла, острый халапеньо, томаты, соус сальса"
+  },
+  {
+    "name": "Дон Бекон",
+    "id": 5,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/5b24a14f4f6c4718802adc796cd65ae3_233x233.jpeg",
+    "description": "Цыпленок, пикантная пепперони, томатный соус, красный лук, моцарелла, бекон"
+  },
+  {
+    "name": "Аррива!",
+    "id": 6,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/e6a8b0a6818e46968acd075f521e4053_233x233.jpeg",
+    "description": "Соус бургер, цыпленок, соус ранч, чоризо, сладкий перец, красный лук, моцарелла, томаты, чеснок"
+  },
+  {
+    "name": "Пепперони Фреш с томатами",
+    "id": 7,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/f57b939a4455453daade38016f61d766_233x233.jpeg",
+    "description": "Пикантная пепперони, томатный соус, моцарелла, томаты"
+  },
+  {
+    "name": "Испанские колбаски чоризо",
+    "id": 8,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/750065aab4ea45268fac2f17d4c56183_233x233.jpeg",
+    "description": "Острая чоризо, моцарелла, томаты, соус чипотле"
+  },
+  {
+    "name": "Мексиканская",
+    "id": 9,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/eeb21a31-3da8-494a-8046-b5bfb6d83599.jpg",
+    "description": "Цыпленок, томатный соус, сладкий перец, красный лук, моцарелла, острый халапеньо, томаты, соус сальса"
+  },
+  {
+    "name": "Дон Бекон",
+    "id": 10,
+    "avatar": "https://dodopizza-a.akamaihd.net/static/Img/Products/5b24a14f4f6c4718802adc796cd65ae3_233x233.jpeg",
+    "description": "Цыпленок, пикантная пепперони, томатный соус, красный лук, моцарелла, бекон"
+  }
+]

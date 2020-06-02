@@ -9,7 +9,23 @@
   background: none;
 }
 .menuHeader {
+  line-height: 64px;
   background: none;
   text-align: end;
   padding-top: 50px;
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .menuHeader {
+    background: none;
+    text-align: start;
+    padding-top: 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .ant-layout-header {
+    padding: 0px;
+  }
 }

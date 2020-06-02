@@ -1,33 +1,20 @@
 import React from "react";
-import { Zoom } from "react-slideshow-image";
+import Slider from "./slider/Slider";
+import Information from "./information/Information";
+import TextAd from "./textAd/TextAd";
+import Gallery from "./gallery/Gallery";
+import ClientsAndPhone from "./clientsAndPhone/ClientsAndPhone";
 
-import "./Home.css";
-
-const images = [
-  "https://pizzeriafrumento.com/wp-content/uploads/2019/07/slide_home_4-1200x593.jpg",
-  "https://pizzeriafrumento.com/wp-content/uploads/2019/07/slide_home_6-1200x593.jpg",
-  "https://pizzeriafrumento.com/wp-content/uploads/2019/07/slide_home_5-1200x593.jpg"
-];
-
-const zoomOutProperties = {
-  duration: 5000,
-  transitionDuration: 500,
-  infinite: true,
-  indicators: true,
-  scale: 0.4,
-  arrows: true
+const Home = () => {
+  return (
+    <>
+      <Slider />
+      <Information />
+      <TextAd />
+      <Gallery />
+      <ClientsAndPhone />
+    </>
+  );
 };
 
-export default function Home() {
-  return (
-    <div>
-      <div className="sliderContainer">
-        <Zoom {...zoomOutProperties}>
-          {images.map((each, index) => (
-            <img key={index} style={{ width: "100%" }} src={each} />
-          ))}
-        </Zoom>
-      </div>
-    </div>
-  );
-}
+export default Home;

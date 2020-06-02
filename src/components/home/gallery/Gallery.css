@@ -1,0 +1,59 @@
+.GalleryTitle {
+  text-align: center;
+}
+.blockHomeGalleryTitleText {
+  padding-top: 30px;
+}
+.homeGalleryTitleText {
+  font-size: 50px;
+  color: black;
+}
+.blockHomeGallerySignatureText {
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.homeGallerySignatureText {
+  font-size: 14px;
+}
+.blockHomeGallery {
+  max-width: 60%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.homeGalleryImages {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.homeGalleryImages div {
+  padding: 10px;
+}
+
+.imagesGallery img {
+  max-width: 100%;
+  height: auto;
+}
+.homeGalleryImages img {
+  height: 170px;
+  object-fit: cover;
+  width: 400px;
+}
+@media screen and (max-width: 1000px) {
+  .blockHomeGallery {
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .homeGallery {
+    display: none;
+  }
+  .homeGalleryImages {
+    display: block;
+  }
+  .homeGalleryTitleText {
+    padding: 0px;
+  }
+  .blockHomeGallery {
+    padding: 0px;
+  }
+}

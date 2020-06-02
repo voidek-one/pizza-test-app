@@ -1,0 +1,103 @@
+.blockTextAdAdvertisingLettering {
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+.content {
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+
+  font-family: "Lato", sans-serif;
+  font-size: 90px;
+  line-height: 90px;
+  color: #ecf0f1;
+}
+.content__container {
+  display: flex;
+  font-weight: 600;
+  overflow: hidden;
+  justify-content: center;
+  justify-items: center;
+  height: 90px;
+  margin-top: 90px;
+}
+
+.content__container__text {
+  margin: 0;
+}
+
+.content__container__list {
+  margin-top: 0;
+  height: 360px;
+  display: block;
+  padding-left: 1em;
+  text-align: left;
+  list-style: none;
+  animation-name: change;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.content__container__item {
+  line-height: 40px;
+  margin: 0;
+}
+
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes change {
+  0%,
+  12.66%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%,
+  29.32% {
+    transform: translate3d(0, -25%, 0);
+  }
+  33.32%,
+  45.98% {
+    transform: translate3d(0, -50%, 0);
+  }
+  49.98%,
+  62.64% {
+    transform: translate3d(0, -75%, 0);
+  }
+  66.64%,
+  79.3% {
+    transform: translate3d(0, -50%, 0);
+  }
+  83.3%,
+  95.96% {
+    transform: translate3d(0, -25%, 0);
+  }
+}
+@media screen and (max-width: 900px) {
+  .content {
+    height: 200px;
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .content__container {
+    font-weight: 600;
+    height: 55px;
+    margin-top: 90px;
+  }
+  .content__container__list {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .blockTextAdAdvertisingLettering {
+    display: none;
+  }
+}

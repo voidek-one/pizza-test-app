@@ -1,19 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import { Layout } from "antd";
 import "./Layout.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
-class PageLayout extends Component {
-  render() {
-    return (
-      <Layout className="layout">
-        <Header></Header>
-        <div className="layoutContent">{this.props.children}</div>
-        <Footer></Footer>
-      </Layout>
-    );
-  }
-}
+const PageLayout = (props) => {
+  return (
+    <Layout className="layout">
+      <Header></Header>
+      <div className="layoutContent">{props.children}</div>
+      <Footer></Footer>
+    </Layout>
+  );
+};
 
 export default PageLayout;

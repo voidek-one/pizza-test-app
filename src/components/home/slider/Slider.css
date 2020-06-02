@@ -1,0 +1,13 @@
+.slideImages {
+  width: 100%;
+}
+
+.sliderContainer {
+  width: 100%;
+  margin: auto;
+}
+@media screen and (max-width: 500px) {
+  .sliderContainer {
+    display: none;
+  }
+}

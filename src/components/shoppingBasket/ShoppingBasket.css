@@ -1,10 +1,23 @@
 .tableBasket {
-  max-width: 60%;
+  max-width: 75%;
   margin: 0 auto;
+}
+.iconDelete {
+  font-size: 25px;
+  color: hotpink;
+}
+.blockTableBasketText {
+  text-align: center;
+}
+.blockTextCartIsEmpty {
+  text-align: center;
+}
+.textCartIsEmpty {
+  font-size: 24px;
+  color: black;
 }
 .tableBasketText {
   font-size: 40px;
-  text-align: center;
   color: rgb(216, 120, 41);
 }
 .bntCroup {
@@ -16,7 +29,69 @@
   margin-right: 20px;
   padding-bottom: 50px;
 }
+.blockErrorTextAauthorization {
+  text-align: center;
+  padding-bottom: 30px;
+}
 .errorTextAauthorization {
-  font-size: 30px;
+  font-size: 24px;
   color: red;
+}
+.btnAuthorization {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.ant-table-pagination.ant-pagination {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .tableBasketText {
+    font-size: 30px;
+  }
+  .tableBasket {
+    max-width: 90%;
+  }
+  .errorTextAauthorization {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .iconDelete {
+    font-size: 14px;
+  }
+  .tableBasketText {
+    font-size: 20px;
+  }
+  .tableBasket {
+    max-width: 95%;
+  }
+  .ant-table thead {
+    font-size: 10px;
+  }
+  .ant-table-cell {
+    font-size: 10px;
+  }
+  .ant-table thead > tr > th,
+  .ant-table tbody > tr > td,
+  .ant-table tfoot > tr > th,
+  .ant-table tfoot > tr > td {
+    padding: 6px 6px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .iconDelete {
+    font-size: 12px;
+  }
+  .ant-table thead {
+    font-size: 8px;
+  }
+  .ant-table-cell {
+    font-size: 8px;
+  }
+  .ant-table thead > tr > th,
+  .ant-table tbody > tr > td,
+  .ant-table tfoot > tr > th,
+  .ant-table tfoot > tr > td {
+    padding: 3px 3px;
+  }
 }

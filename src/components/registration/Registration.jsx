@@ -1,17 +1,19 @@
 import React from "react";
-import { message, Form, Input, Button } from "antd";
-import { Link } from "react-router-dom";
+import { Form, Input, Button } from "antd";
+import { NavLink } from "react-router-dom";
 import "./Registration.css";
 
-export const RegistrationForm = () => {
+export const RegistrationForm = ({ form, onFinish }) => {
   const layout = {
     labelCol: {
       xs: { span: 24 },
-      sm: { span: 4 }
+      sm: { span: 24 },
+      lg: { span: 4 }
     },
     wrapperCol: {
       xs: { span: 24 },
-      sm: { span: 16 }
+      sm: { span: 24 },
+      lg: { span: 18 }
     }
   };
   const tailLayout = {
@@ -20,37 +22,13 @@ export const RegistrationForm = () => {
         span: 24,
         offset: 0
       },
-      sm: {
+      lg: {
         span: 16,
         offset: 4
       }
     }
   };
 
-  const onFinish = async ({ name, email, password }) => {
-    const hide = message.loading("Action in progress..");
-    let response = await fetch("//localhost:5050/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        password
-      })
-    });
-    hide();
-    if (response.ok) {
-      message.success("Loading finished");
-      window.location.assign("http://localhost:3000/login");
-      return;
-    } else {
-      message.error("Ошибка HTTP: " + response.status);
-    }
-  };
-
-  const [form] = Form.useForm();
   return (
     <Form
       className="registrationForm"
@@ -58,15 +36,14 @@ export const RegistrationForm = () => {
       {...layout}
       onFinish={onFinish}
       name="basic"
-      initialValues={{ remember: true }}
     >
       <Form.Item
-        label="Name"
+        label="Имя"
         name="name"
         rules={[
           { required: true, message: "Пожалуйста введите своё имя!" },
           {
-            max: 50,
+            max: 20,
             message: "Слишком длинный!"
           }
         ]}
@@ -86,7 +63,7 @@ export const RegistrationForm = () => {
             message: "Пожалуйста введите свой email!"
           },
           {
-            max: 100,
+            max: 30,
             message: "Слишком длинный!"
           }
         ]}
@@ -96,11 +73,19 @@ export const RegistrationForm = () => {
 
       <Form.Item
         name="password"
-        label="Password"
+        label="Пароль"
         rules={[
           {
             required: true,
             message: "Пожалуйста введите пароль!"
+          },
+          {
+            max: 20,
+            message: "Слишком длинный!"
+          },
+          {
+            min: 5,
+            message: "Слишком короткий!"
           }
         ]}
         hasFeedback
@@ -110,7 +95,7 @@ export const RegistrationForm = () => {
 
       <Form.Item
         name="confirm"
-        label="Confirm Password"
+        label="Повторите пароль"
         dependencies={["password"]}
         hasFeedback
         rules={[
@@ -123,7 +108,6 @@ export const RegistrationForm = () => {
               if (!value || getFieldValue("password") === value) {
                 return Promise.resolve();
               }
-
               return Promise.reject("Пароли не совпадают!");
             }
           })
@@ -138,9 +122,9 @@ export const RegistrationForm = () => {
         </Button>
       </Form.Item>
       <Form.Item {...tailLayout}>
-        <Link to="/login">
+        <NavLink to="/login">
           <Button>У меня уже есть аккаунт</Button>
-        </Link>
+        </NavLink>
       </Form.Item>
     </Form>
   );

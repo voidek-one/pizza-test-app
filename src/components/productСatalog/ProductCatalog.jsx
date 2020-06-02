@@ -1,46 +1,45 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import PizzaItem from "./pizzaItem/PizzaItem";
 import "./ProductCatalog.css";
-import { Link } from "react-router-dom";
+import { getProductsThunkCreater } from "../../store/thunk/productsThunk";
+import { addInBasket } from "../../store/actions/basketActions";
+import { Redirect } from "react-router";
 
-export default class Catalog extends Component {
-  state = { pizzas: [] };
-  async getPizzas() {
-    const url = "//localhost:5050/api/pizzas";
-    const response = await fetch(url);
-
-    if (response.ok) {
-      const json = await response.json();
-      if (!Array.isArray(json)) {
-        throw Error(`ожидался массив ${JSON.stringify(json)}`);
-      }
-      return json;
-    }
-  }
-  async componentDidMount() {
-    const pizzas = await this.getPizzas();
-    if (pizzas) {
-      this.setState({ pizzas });
-    }
+class Catalog extends Component {
+  componentDidMount() {
+    this.props.getProductsApi();
   }
   render() {
-    const pizzas = this.state.pizzas;
+    if (!this.props.isAuth) {
+      return <Redirect to={"/login"} />;
+    }
     return (
-      <div>
-        <div>
-          <Link href="http://localhost:3000/basket">
-            <img
-              className="iconBasket"
-              src="https://st.depositphotos.com/1005920/1832/i/450/depositphotos_18323389-stock-photo-shopping-cart-green-glossy-icon.jpg"
-            />
-          </Link>
-        </div>
-        <div className="productPizza">
-          {pizzas.map(pizza => (
-            <PizzaItem key={pizza.id} pizza={pizza} />
-          ))}
-        </div>
+      <div className="productPizza">
+        {this.props.pizzas.map(pizza => (
+          <PizzaItem
+            key={pizza.id}
+            pizza={pizza}
+            addInBasket={this.props.addInBasket}
+          />
+        ))}
       </div>
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    pizzas: state.productsReducer.pizzas,
+    isAuth: !!state.userReducer.user
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    getProductsApi: () => dispatch(getProductsThunkCreater()),
+    addInBasket: products => dispatch(addInBasket(products))
+  };
+};
+
+const CatalogContainer = connect(mapStateToProps, mapDispatchToProps)(Catalog);
+
+export default CatalogContainer;

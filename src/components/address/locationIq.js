@@ -1,5 +1,5 @@
 const locationiqClient = options => {
-  const { token, region, format } = options;
+  const { token, format } = options;
 
   return value => {
     const url = new URL(`http://localhost:5050/v1/search.php`);

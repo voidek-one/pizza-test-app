@@ -1,0 +1,98 @@
+.middleBlockTextAndImades {
+  display: flex;
+}
+.homeElement {
+  text-align: center;
+  width: 50%;
+}
+.homeElement img {
+  object-fit: contain;
+}
+.blockHeadingText {
+  padding-top: 20px;
+}
+.homeHeadingText {
+  font-size: 30px;
+  color: rgb(184, 122, 47);
+}
+.blockSubtitleText {
+  padding: 0 30px 0 30px;
+}
+.homeSubtitleText {
+  font-size: 20px;
+}
+.homeMiddleSignatureLogo {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.homeMiddleSignatureText {
+  font-size: 16px;
+  padding-bottom: 40px;
+}
+.blockHomeMiddleSignature {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 50%;
+}
+.smooth {
+  opacity: 1;
+}
+.holder {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px #333333;
+  transition: 0.5s Ease;
+}
+.go-left {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  position: absolute;
+  bottom: 0px;
+  right: -600px;
+  width: 360px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.5s Ease;
+}
+.smooth:hover {
+  opacity: 0.6;
+  box-shadow: 0px 0px 10px #333333;
+}
+.smooth:hover > .go-left {
+  right: 0px;
+}
+
+@media screen and (max-width: 1250px) {
+  .homeSubtitleText {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .homeSubtitleText {
+    padding: 0 10px 0 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .homeElement {
+    display: none;
+  }
+  .homeHeadingText {
+    font-size: 25px;
+    padding-top: 10px;
+  }
+  .blockHomeMiddleSignature {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .middleBlockTextAndImades {
+    display: block;
+  }
+  .homeElement {
+    margin: 0 auto;
+    width: 90%;
+  }
+}

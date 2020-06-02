@@ -1,26 +1,33 @@
 .pizzaItemCart {
-  border: blanchedalmond 1px solid;
-  border-radius: 90px;
   box-shadow: -18px 0 20px -20px #333, 18px 0 20px -20px #333;
   margin: 30px;
   background-color: white;
+  max-width: 300px;
 }
 .pizzaItemName {
   padding-top: 20px;
 }
 .pizzaItemImg img {
   padding: 10px;
-  max-width: 80%;
+  max-width: 100%;
 }
-.pizzaItemAmount {
-  padding-bottom: 15px;
+.descriptionCatalog {
+  margin: 0px 10px 0px 10px;
+  height: 60px;
 }
-.pizzaItemSelect {
-  padding-bottom: 15px;
+.nameOfProduct {
+  font-size: 20px;
+  font-weight: 500;
 }
 .pizzaItemPrice {
   font-size: 30px;
+  margin: 0px;
 }
 .pizzaItemBtn {
   padding-bottom: 20px;
+}
+@media screen and (max-width: 400px) {
+  .pizzaItemCart {
+    margin: 5px;
+  }
 }

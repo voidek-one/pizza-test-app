@@ -14,3 +14,26 @@
   text-align: center;
   color: red;
 }
+@media screen and (max-width: 900px) {
+  .loginForm {
+    max-width: 75%;
+  }
+  }
+@media screen and (max-width: 600px) {
+  .ant-col-offset-4 {
+    margin-left: 0;
+}
+  .btnAndTextGroup div {
+    margin-top: 20px;
+  }
+  .loginForm {
+    max-width: 90%;
+  }
+  .btnAndTextGroup {
+    text-align: center;
+    display: block;
+  }
+  .textNoRegistrastion{
+    display: none;
+  }
+  }

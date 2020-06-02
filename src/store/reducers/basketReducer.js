@@ -1,16 +1,14 @@
-import { combineReducers } from "redux";
-
 const initialState = {
-  objects: []
+  products: []
 };
 
-function addReducer(state = initialState, action) {
+function addProductsReducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_OBJECTS_IN_BASCET":
-      const itemExist = state.objects.find(function(object) {
+      const itemExist = state.products.find(function(product) {
         return (
-          object.id === action.payload.id &&
-          object.selected === action.payload.selected
+          product.id === action.payload.id &&
+          product.selected === action.payload.selected
         );
       });
       if (itemExist) {
@@ -18,28 +16,31 @@ function addReducer(state = initialState, action) {
           itemExist.pricesAndSizes + action.payload.pricesAndSizes;
         itemExist.amoundselected =
           itemExist.amoundselected + action.payload.amoundselected;
-        return { ...state, objects: [...state.objects] };
+        return { ...state, products: [...state.products] };
       } else {
         return {
           ...state,
-          objects: state.objects.concat(action.payload)
+          products: state.products.concat(action.payload)
         };
       }
     case "DELETE_OBJECT_FROM_BASCET":
       return {
         ...state,
-        objects: state.objects.filter(
+        products: state.products.filter(
           item =>
             item.id !== action.payload.id ||
             (item.id === action.payload.id &&
               item.selected !== action.payload.selected)
         )
       };
+    case "SEND_DATA_FOR_SERVER_SUCCESS":
+      return {
+        ...state,
+        products: []
+      };
     default:
       return state;
   }
 }
 
-const rootReducer = combineReducers({ addReducer });
-
-export default rootReducer;
+export default addProductsReducer;

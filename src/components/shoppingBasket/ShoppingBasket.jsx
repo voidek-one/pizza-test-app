@@ -1,24 +1,18 @@
 import React from "react";
-import { Table, Button, Form, Popconfirm } from "antd";
-import { connect } from "react-redux";
 import "./ShoppingBasket.css";
-import { DeleteOutlined } from "@ant-design/icons";
-import { deleteFromBasket } from "../../store/actions/index";
-import MaskedInput from "react-text-mask";
-import { fetchWithAuth } from "../../utils/auth/auth";
-import { isAuth } from "../../utils/auth/auth";
+import { Form } from "antd";
+import { connect } from "react-redux";
+import { deleteFromBasket } from "../../store/actions/basketActions";
 import Address from "../address/Address";
-import { Link } from "react-router-dom";
-
-const { Column } = Table;
-
-const mapStateToProps = state => {
-  return { objects: state.addReducer.objects };
-};
+import PhoneNumber from "./shopingBasketComponents/PhoneNumber";
+import ButtonsGroup from "./shopingBasketComponents/buttonsGroup";
+import ShoppingBasketTable from "./shopingBasketComponents/ShoppingBasketTable";
+import { sendDataForServerThunk } from "../../store/thunk/basketThunk";
+import Text from "antd/lib/typography/Text";
 
 const ShoppingBasket = props => {
-  const { objects } = props;
-  const totalAmount = objects
+  const { products, isAuth } = props;
+  const totalAmount = products
     .map(i => i.pricesAndSizes)
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
@@ -26,154 +20,46 @@ const ShoppingBasket = props => {
     props.deleteFromBasket(id);
   };
 
-  const greeting = isAuth();
+  const onFinish = ({ address, phone }) => {
+    props.sendDataForServer(products, totalAmount, address, phone);
 
-  console.log(greeting);
-
-  const onFinish = async ({ address, phone }) => {
-    console.log(objects, totalAmount, address, phone);
-    const response = await fetchWithAuth("//localhost:5050/api/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-
-      body: JSON.stringify({
-        objects,
-        totalAmount,
-        address,
-        phone
-      })
-    });
-
-    if (response.ok) {
-      return;
-    } else {
-      window.alert("Ошибка HTTP: " + response.status);
-    }
+    window.location.assign("/catalog");
   };
 
   return (
     <div className="tableBasket">
-      <Form onFinish={onFinish}>
-        <p className="tableBasketText">Корзина товаров</p>
-        <Table dataSource={objects}>
-          >
-          <Form.Item name="name">
-            <Column title="Имя" dataIndex="name" key="name" />
-          </Form.Item>
-          <Form.Item name="id">
-            <Column title="Id" dataIndex="id" key="id" />
-          </Form.Item>
-          <Form.Item name="sizes">
-            <Column title="Размер" dataIndex="selected" key="selected" />
-          </Form.Item>
-          <Form.Item name="amount">
-            <Column
-              title="Количество"
-              dataIndex="amoundselected"
-              key="amoundselected"
-            />
-          </Form.Item>
-          <Form.Item name="prices">
-            <Column
-              title="Цена"
-              dataIndex="pricesAndSizes"
-              key="pricesAndSizes"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Column
-              title="Операции"
-              dataIndex="operation"
-              render={(text, record) =>
-                props.objects.length >= 1 ? (
-                  <Popconfirm
-                    title="Вы уверены?"
-                    onConfirm={() => handleDelete(record)}
-                  >
-                    <DeleteOutlined
-                      type="delete"
-                      style={{ color: "hotpink", fontSize: "25px" }}
-                    />
-                  </Popconfirm>
-                ) : null
-              }
-            />
-          </Form.Item>
-        </Table>
-        <Form.Item name="summ">
-          <div>
-            <p className="tableBasketText">Итоговая сумма: {totalAmount}</p>
-          </div>
-        </Form.Item>
-        <Form.Item name="address">
-          <Address />
-        </Form.Item>
-
-        <Form.Item
-          name="phone"
-          label="Телефон"
-          rules={[
-            {
-              required: true,
-              message: "Пожалуйска укажите свой номер телефона!"
-            }
-          ]}
-        >
-          <MaskedInput
-            mask={[
-              "+",
-              "7",
-              "(",
-              /[0-9]/,
-              /[0-9]/,
-              /[0-9]/,
-              ")",
-              " ",
-              /[0-9]/,
-              /[0-9]/,
-              /[0-9]/,
-              "-",
-              /[0-9]/,
-              /[0-9]/,
-              /[0-9]/,
-              /[0-9]/
-            ]}
-            className="phone-control"
-            placeholder="номер телефона без '8'"
-            guide={false}
-          />
-        </Form.Item>
-        <div className="bntCroup">
-          <div className="bntOrder">
-            <Button type="primary" htmlType="submit" disabled={!greeting}>
-              Заказать
-            </Button>
-          </div>
-          <div>
-            <Link to="/catalog">
-              <Button type="primary">Вернуться к выбору</Button>
-            </Link>
-          </div>
+      {totalAmount ? (
+        <div>
+          {" "}
+          <ShoppingBasketTable {...{ products, handleDelete, totalAmount }} />
+          <Form onFinish={onFinish}>
+            <Address />
+            <PhoneNumber />
+            <ButtonsGroup isAuth={isAuth} />
+          </Form>
         </div>
-        {!greeting && (
-          <div>
-            <p className="errorTextAauthorization">
-              Вы не авторизованы, пожалуйста нажните на кнопку "авторизация"
-            </p>
-            <Link to="/login">
-              <Button type="primary">Пожалуйста авторизуйтесь</Button>
-            </Link>
-          </div>
-        )}
-      </Form>
+      ) : (
+        <div className="blockTextCartIsEmpty">
+          <Text className="textCartIsEmpty">
+            Корзина пуста, добавьте какой нибудь товар в корзину=)
+          </Text>
+        </div>
+      )}
     </div>
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    products: state.basketReducer.products,
+    isAuth: !!state.userReducer.user
+  };
+};
+
 const mapDispatchToProps = dispatch => ({
-  deleteFromBasket: object => dispatch(deleteFromBasket(object))
+  deleteFromBasket: product => dispatch(deleteFromBasket(product)),
+  sendDataForServer: (products, totalAmount, address, phone) =>
+    dispatch(sendDataForServerThunk({ products, totalAmount, address, phone }))
 });
 
 const List = connect(mapStateToProps, mapDispatchToProps)(ShoppingBasket);

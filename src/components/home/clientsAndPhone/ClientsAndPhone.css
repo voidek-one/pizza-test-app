@@ -1,0 +1,131 @@
+.blockHomeGalleryTitleText {
+  text-align: center;
+}
+.homeOurClientsImages {
+  display: flex;
+  justify-content: center;
+}
+.homeOurClientsImages div {
+  padding: 40px;
+}
+.blockHomeOurExcellenceTitle {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.homeOurExcellence {
+  display: flex;
+  text-align: center;
+}
+.homeOurExcellence div {
+  padding: 10px;
+}
+.blockHomeOurExcellence {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.homeOurExcellenceSignatureText {
+  font-size: 12px;
+}
+.homeOurExcellenceTittleText {
+  font-size: 16px;
+  color: black;
+}
+.homeOurContacts {
+  align-items: baseline;
+  display: flex;
+}
+.homeOurContactsText {
+  padding-left: 10px;
+  font-size: 25px;
+  color: black;
+}
+.homeOurContactsPhoneAndAddress {
+  display: flex;
+  justify-content: center;
+}
+.blockHomeOurContacts {
+  padding-bottom: 50px;
+}
+.blockHomeOurContactsPhoneAndAddress {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.homeOurContactsPhone {
+  margin-right: 10%;
+}
+.iconTrophyOutlined {
+  font-size: 40px;
+  color: #08c;
+}
+.iconHeartOutlined {
+  font-size: 40px;
+  color: #eb2f96;
+}
+.iconHomeOutlined {
+  font-size: 40px;
+  color: #08c;
+}
+.iconContacts {
+  font-size: 30px;
+  color: #009900;
+}
+@media screen and (max-width: 1250px) {
+  .homeOurClientsImages div {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homeOurClientsImages {
+    display: block;
+    text-align: center;
+  }
+  .homeOurContactsPhone {
+    margin-right: 0;
+  }
+  .homeOurContacts {
+    justify-content: center;
+  }
+  .homeOurContactsPhoneAndAddress {
+    display: block;
+  }
+  .blockHomeOurExcellence {
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .homeOurExcellence {
+    display: block;
+    text-align: center;
+  }
+  .blockHomeOurExcellence {
+    max-width: 60%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .homeOurContactsText {
+    padding-left: 5px;
+    font-size: 10px;
+  }
+  .iconContacts {
+    font-size: 10px;
+    color: #009900;
+  }
+  .homeOurExcellenceTittleText {
+    padding-top: 5px;
+    font-size: 14px;
+    color: black;
+  }
+  .homeOurExcellenceSignatureText {
+    font-size: 10px;
+  }
+  .homeGalleryTitleText {
+    font-size: 20px;
+  }
+  .homeOurClientsImages div {
+    padding: 0px;
+  }
+  .homeGallerySignatureText {
+    font-size: 10px;
+  }
+}
