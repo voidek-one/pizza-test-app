@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ee1cca5bca3b4fc6c3b6263fcfcf98cc",
+    "revision": "bc17985e29c57bca7df4920989c42ee5",
     "url": "/pizza-test-app/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pizza-test-app/static/css/2.610bbd32.chunk.css"
   },
   {
-    "revision": "e71a0f72ed3112661d7e",
-    "url": "/pizza-test-app/static/css/main.9f1f15fb.chunk.css"
+    "revision": "eae76cb23a2f1c63e66f",
+    "url": "/pizza-test-app/static/css/main.51079594.chunk.css"
   },
   {
     "revision": "31be7d54b0870d1638d3",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pizza-test-app/static/js/2.412376a3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e71a0f72ed3112661d7e",
-    "url": "/pizza-test-app/static/js/main.a4531071.chunk.js"
+    "revision": "eae76cb23a2f1c63e66f",
+    "url": "/pizza-test-app/static/js/main.a3beb121.chunk.js"
   },
   {
     "revision": "f9d91553f39cb252cccd",
